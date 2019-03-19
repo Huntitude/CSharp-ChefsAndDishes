@@ -1,0 +1,53 @@
+@{
+    ViewData["Title"] = "All Dishes";
+}
+@model List<Dish>
+<div class="header">
+    <nav>
+        <a class="nav-link" href="/">Chefs</a> | 
+        <a class="nav-link" href="/dishes">Dishes</a> |
+        <a class="nav-link" href="/dish/new">Add a Dish</a>
+    </nav>
+</div>
+
+<a href="/">Home</a>
+
+<div class="wrapper">
+    @{
+        if(Model.Count < 1)
+        {
+            <h3>There are no dishes to display. Add a dish above!</h3>
+        }
+        else
+        {
+            <h1>Yum, take a look at our tasty dishes!</h1>
+            <hr class="hr">
+            <table class="table table-striped">
+            <thead>
+
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Chef</th>
+                    <th scope="col">Tastiness</th>
+                    <th scope="col">Calories</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach(Dish dish in @Model)
+                    {
+                        <tr>
+                            <th>@dish.DishName</th>
+                            <th>@dish.Creator.FirstName @dish.Creator.LastName</th>
+                            <th>@dish.Tastiness</th>
+                            <th>@dish.Calories</th>
+                        </tr>
+                    }
+                }
+            </tbody>
+            </table>
+        }
+    }
+
+    <!-- END OF WRAPPER -->
+</div>

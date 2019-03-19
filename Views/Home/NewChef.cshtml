@@ -1,0 +1,36 @@
+@{
+    ViewData["Title"] = "Add a Chef";
+}
+@model ViewModel
+<div class="header">
+    <nav>
+        <h1>Add a Chef</h1>
+    </nav>
+</div>
+
+<a href="/">Home</a>
+
+<div class="wrapper">
+
+    <form action="/addchef" method="post">
+        <span class="alert-danger" asp-validation-for="Chef.FirstName"></span><br>
+        <label asp-for="Chef.FirstName"></label><br>
+        <input type="text" asp-for="Chef.FirstName"><br>
+        
+        <span class="alert-danger" asp-validation-for="Chef.LastName"></span><br>
+        <label asp-for="Chef.LastName"></label><br>
+        <input type="text" asp-for="Chef.LastName"><br>
+        
+        <span class="alert-danger" asp-validation-for="Chef.Dob"></span><br>
+        <label asp-for="Chef.Dob"></label><br>
+        <input type="Date" asp-for="Chef.Dob"><br><br>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+
+
+  <!-- END OF WRAPPER   -->
+</div>
+

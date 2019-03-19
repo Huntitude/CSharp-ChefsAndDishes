@@ -1,0 +1,54 @@
+@{
+    ViewData["Title"] = "Chefs N' Dishes";
+}
+@model ViewModel
+
+<div class="header">
+    <nav>
+        <a class="nav-link" href="/">Chefs</a> | 
+        <a class="nav-link" href="/dishes">Dishes</a> |
+        <a class="nav-link" href="/new">Add a Chef</a>
+    </nav>
+</div>
+
+<div class="wrapper">
+    @{
+       if(Model.Chefs.Count < 1)
+       {
+           <h3>There are no Chef's to display. Add a Chef above!</h3>
+       }
+       else
+       {
+            <h1>Check out our roster of Chefs!</h1>
+            <hr class="hr">
+            <table class="table table-striped">
+            <thead>
+
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col"># of Dishes</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach(var item in Model.Chefs)
+                    {
+                        var year = DateTime.Today.Year;
+                        var age = year - item.Dob.Year;
+                    <tr>
+                        <td>@item.FirstName @item.LastName</td>
+                        <td>@age</td>
+                        <td>@item.CreatedDish.Count</td>
+                </tr>
+                    }
+                }
+            </tbody>
+            </table>
+       }
+
+    <!-- END OF WRAPPER -->
+    }
+</div>
+
+

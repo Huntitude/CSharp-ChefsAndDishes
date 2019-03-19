@@ -1,0 +1,29 @@
+/*Write all of your CSS here*/
+div.header {
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+    border-bottom: 2px solid black;
+}
+hr {
+    width: 100%; 
+    color: black; 
+    height: 1px;
+    background-color:black;
+}
+
+div.wrapper {
+    margin-top: 30px;
+}
+
+div.box {
+    /* border: 1px solid red; */
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 15px;
+}
+button.btn.btn-primary{
+    margin-left: 14px;
+}
